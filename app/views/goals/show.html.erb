@@ -1,0 +1,14 @@
+<h1><%=@goal.title%></h1>
+
+<br>
+<% @goal.attributes.each do |attribute| %>
+    <%= attribute %>
+    <br>
+<% end %>
+
+<br>
+<% if !@goal.completed %>
+<%= button_to "Complete Goal", updateStatus_goal_url(@goal), method: :patch %>
+<% else %>
+  "Goal Completed!"
+<% end %>

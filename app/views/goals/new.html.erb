@@ -1,0 +1,27 @@
+
+
+
+<form action= <%= goals_url %> method="post">
+
+  <%= auth_token %>
+  <label>
+    Title
+  <input type="text" name="goal[title]" value="<%= @goal.title %>">
+  </label>
+
+  <label>
+    Body
+    <input type="text" name="goal[body]" value="<%= @goal.body %>">
+  </label>
+
+  <label>
+    Visibility
+    <select name="goal[visiblity]">
+      <option value="public" <%= "selected" if @goal.visiblity == "public" %>>Public</option>
+      <option value="private" <%= "selected" if @goal.visiblity == "private" %>>Private</option>
+
+    </select>
+  </label>
+
+  <input type="submit" value="submit">
+</form>

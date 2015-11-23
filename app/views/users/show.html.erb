@@ -1,0 +1,19 @@
+<h1>Goals</h1>
+    
+<h2>Uncompleted Goals</h2>
+<% @user.goals.each do |goal| %>
+    <% if !goal.completed %>
+    <%= link_to goal.title, goal_url(goal) %>
+  <br>
+<% end %>
+<% end %>
+
+<h2>Completed Goals</h2>
+<% @user.goals.each do |goal| %>
+
+    <% if goal.completed %>
+
+    <%= link_to goal.title, goal_url(goal) %>
+  <br>
+<% end %>
+<% end %>
