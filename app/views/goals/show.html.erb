@@ -10,5 +10,5 @@
 <% if !@goal.completed %>
 <%= button_to "Complete Goal", updateStatus_goal_url(@goal), method: :patch %>
 <% else %>
-  "Goal Completed!"
+  Goal Completed!
 <% end %>

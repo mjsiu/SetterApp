@@ -1,5 +1,5 @@
 <h1>Goals</h1>
-    
+
 <h2>Uncompleted Goals</h2>
 <% @user.goals.each do |goal| %>
     <% if !goal.completed %>
@@ -17,3 +17,5 @@
   <br>
 <% end %>
 <% end %>
+
+<%= button_to "Create Goal", new_goal_url, method: :get %>

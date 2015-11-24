@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :user
+  resource :user
   resources :goals do
     patch 'updateStatus', :on => :member
   end
