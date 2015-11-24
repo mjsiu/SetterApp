@@ -19,3 +19,20 @@
 <% end %>
 
 <%= button_to "Create Goal", new_goal_url, method: :get %>
+
+
+<% @user.comments.each do |comment| %>
+<%= comment.body %>
+<% end %>
+
+<form action="<%=comments_url%>" method="post">
+
+  <%= auth_token %>
+
+  <label>Title
+  <input type="text" name="comment[title]" id="Title"></label>
+  <label>Body
+  <input type="text" name="comment[body]" id="Body"></label>
+
+  <input type="submit" value="New Comment">
+</form>

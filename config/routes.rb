@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     patch 'updateStatus', :on => :member
   end
   resource :session
+  resources :comments, only: [:create, :destroy]
 end

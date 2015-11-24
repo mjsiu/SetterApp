@@ -1,7 +1,7 @@
 
 
 class User < ActiveRecord::Base
-
+  include Commentable
   attr_accessor :password
 
   validates :username, :password_digest, :session_token, presence: true
@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  include Commentable
 
   has_many :goals
 
